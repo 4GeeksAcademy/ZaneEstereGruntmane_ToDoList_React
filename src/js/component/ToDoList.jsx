@@ -4,14 +4,14 @@ import Input from "../component/Input.jsx";
 const ToDoList = () => {
 
   const [todos, setTodos] = useState([]);
+  const [inputValue, setInputValue] = useState ([])
 
   const handleKeyPress = (e) => {
     
     if (e.key === "Enter") {
       e.preventDefault()
-      setTodos([...todos, e.target.value]);
+      setTodos([...todos, e.target.value]) 
     }
-  
   };
 
   return (
@@ -22,10 +22,11 @@ const ToDoList = () => {
         <input
         className="input-control container-fluid border-dark-subtle"
         style={{ width: "30rem" }}
-        type="text"
+        type="text" 
         placeholder="What do you want to do?"
         aria-label="todo list input field"
-
+        onChange={(e) => setInputValue(e.target.value)}
+        value = {inputValue}
         onKeyDown={handleKeyPress}
       />
 
