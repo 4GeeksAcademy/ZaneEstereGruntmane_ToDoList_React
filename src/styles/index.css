@@ -1,12 +1,10 @@
+    .listYourToDo {
+        font-family: 'Patrick Hand SC', cursive;
+    }
 
-/* 
-
-    You can write your own styles here...
+    input:checked + span.todo-text {
+        opacity: 0.5;
+        font-weight: 100;
+        text-decoration: line-through;
+    }
     
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
-
-*/
