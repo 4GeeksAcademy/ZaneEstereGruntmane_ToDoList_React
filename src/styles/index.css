@@ -1,10 +1,12 @@
     .listYourToDo {
         font-family: 'Patrick Hand SC', cursive;
     }
+  
 
     input:checked + span.todo-text {
         opacity: 0.5;
         font-weight: 100;
         text-decoration: line-through;
     }
-    
+
+ 
