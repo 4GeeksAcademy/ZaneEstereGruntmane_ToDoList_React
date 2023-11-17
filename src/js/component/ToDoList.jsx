@@ -16,14 +16,16 @@ const ToDoList = () => {
 
   const onClick = (index) => {
     setTodos(todos.filter((todo, currentIndex) => index !== currentIndex));
+  }
 
-    return (
-      <div className="List-Your-Todo container-fluid text-center mt-5 mb-5">
-        <form className="list-input">
-          <h1 className="list-title">To Do List</h1>
+  return (
+    <div className="List-Your-Todo container-fluid text-center mt-5 mb-5">
+      <form className="list-input">
+        <h1 className="list-title">To Do List</h1>
 
+        <div className="container-fluid text-align-left">
           <input
-            className="input-control container-fluid border-dark-subtle"
+            className="input-control border-dark-subtle"
             style={{ width: "30rem" }}
             type="text"
             placeholder="What do you want to do?"
@@ -40,11 +42,12 @@ const ToDoList = () => {
               trash={(todo) => onClick(index)}
               total={todos.length}
             />
-          ))};
-          
-        </form>
-      </div>
-    )
-  }
+          ))}
+
+        </div>
+
+      </form>
+    </div>
+  )
 };
 export default ToDoList;

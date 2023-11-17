@@ -3,7 +3,7 @@ import React from "react";
 const Input = ({todo, trash, total}) => {
 
   return (
-    <div className= "container-fluid">
+    <div>
 
 
       <div className="todo-items justify-content-around align-items-center bg-light shadow-sm bg-body-tertiary rounded m-auto" style={{ width: "30rem" }}>
@@ -14,11 +14,11 @@ const Input = ({todo, trash, total}) => {
         </button>
   
       </div>
-      <div className="total-todo text-center justify-content-around fs-6 fw-light">{total}</div>
+      <div className="total-todo fs-6 fw-light text-left m-auto" style={{ width: "30rem" }}>{total}</div>
       
     </div>
 
-  );
+  )
 }
 
 export default Input;
