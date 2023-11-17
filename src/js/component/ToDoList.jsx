@@ -34,11 +34,11 @@ const ToDoList = () => {
 
           />
 
-          {todos.map((todo) => (
+          {todos.map((todo, index) => (
             <Input
               todo={todo}
               trash={(todo) => onClick(index)}
-              total-Todo={todos.length}
+              total={todos.length}
             />
           ))};
           
