@@ -26,7 +26,7 @@ const ToDoList = () => {
         <form className="list-input text-center">
           <h1 className="list-title">To Do List</h1>
 
-          <div className="container-fluid text-align-left">
+          <div className="container-fluid">
             <input
               className="input-control border-dark-subtle"
               style={{ width: "30rem" }}
@@ -45,7 +45,6 @@ const ToDoList = () => {
               trash={(todo) => handleDelete(index)}
             />
           ))}
-
 
         </form>
 

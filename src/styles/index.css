@@ -4,10 +4,7 @@
     flex-direction: row;
     align-items: center;
     gap: 0.5rem; 
-}
-
-.todos-text {
-    text-align: center;
+    
 }
 
 .todos-trash {
@@ -15,11 +12,13 @@
 
 }
 
-
 .counter {
-    
+    width: 30rem;
+    display: flex;
+    margin-inline:auto; 
     margin-top: 1rem;
     font-size: smaller;
     color: rgb(182, 169, 169);
+    
 }
 
