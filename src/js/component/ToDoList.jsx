@@ -14,40 +14,49 @@ const ToDoList = () => {
     }
   };
 
-  const onClick = (index) => {
-    setTodos(todos.filter((todo, currentIndex) => index !== currentIndex));
+  const handleDelete = (index) => {
+    let aux = todos
+    aux.splice (index, 1)
+    setTodos ([... aux])
   }
 
   return (
-    <div className="List-Your-Todo container-fluid text-center mt-5 mb-5">
-      <form className="list-input">
-        <h1 className="list-title">To Do List</h1>
 
-        <div className="container-fluid text-align-left">
-          <input
-            className="input-control border-dark-subtle"
-            style={{ width: "30rem" }}
-            type="text"
-            placeholder="What do you want to do?"
-            aria-label="todo list input field"
-            onChange={(e) => setInputValue(e.target.value)}
-            value={inputValue}
-            onKeyDown={handleKeyPress}
+      <div className="List-Your-Todo container-fluid mt-5 mb-5">
+        <form className="list-input text-center">
+          <h1 className="list-title">To Do List</h1>
 
-          />
+          <div className="container-fluid text-align-left">
+            <input
+              className="input-control border-dark-subtle"
+              style={{ width: "30rem" }}
+              type="text"
+              placeholder="What do you want to do?"
+              aria-label="todo list input field"
+              onChange={(e) => setInputValue(e.target.value)}
+              value={inputValue}
+              onKeyDown={handleKeyPress}
 
+            />
+          </div>
           {todos.map((todo, index) => (
             <Input
               todo={todo}
-              trash={(todo) => onClick(index)}
-              total={todos.length}
+              trash={(todo) => handleDelete(index)}
             />
           ))}
 
-        </div>
 
-      </form>
-    </div>
+        </form>
+
+        <p className="counter">
+          {
+            todos.length === 0 ? null :
+              todos.length === 1 ? `${todos.length} item` :
+                `${todos.length} items`
+          }
+        </p>
+      </div>
   )
 };
 export default ToDoList;
