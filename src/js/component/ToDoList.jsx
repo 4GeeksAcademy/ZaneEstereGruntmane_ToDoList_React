@@ -14,12 +14,6 @@ const ToDoList = () => {
     }
   };
 
-  const handleDelete = (index) => {
-    let aux = todos
-    aux.splice (index, 1)
-    setTodos ([... aux])
-  }
-
   return (
 
       <div className="List-Your-Todo container-fluid mt-5 mb-5">
@@ -41,8 +35,9 @@ const ToDoList = () => {
           </div>
           {todos.map((todo, index) => (
             <Input
-              todo={todo}
-              trash={(todo) => handleDelete(index)}
+              key = {index}
+              todo = {todo}
+              todos-trash={() => setTodos(todos.filter((_, currentIndex) => index !== currentIndex))}
             />
           ))}
 
