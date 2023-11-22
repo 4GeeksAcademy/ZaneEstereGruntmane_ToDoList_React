@@ -21,27 +21,38 @@ const Home = () => {
 		}
 	}
 	return (
-		<div className="List-Your-Todo container-fluid mt-5 mb-5 text-center">
-		  <form onSubmit={(e) => handleSubmit(e)}>
-			<input type="text" value={newTask} onChange={(e) => handleChange(e)} placeholder="What do you want to do?..." />
-			<input type="submit" className="btn btn-secondary rounded-1 p-1" value={"Add task"} />
-		  </form>
+		<div className="todo-list container-fluid mt-5 mb-5 text-center">
 
-		  {todoList.length > 0 ? (
-			<div className="container-fluid todo-items bg-light shadow-sm bg-body-tertiary rounded m-auto">
-			  <i className="fa-regular fa-square-check ms-3" style={{ color: "#23C474" }}>
-				{todoList.map((task, index) => (
-				  <i key={index}>
-					{task.label} <span onClick={(e) => handleDelete(index)}>X</span>
-				  </i>
-				))}
-			  </i>
-			</div>
-		  ) : (
-			<p>try adding some tasks to do!</p>
-		  )}
+			<form className="todo-form" onSubmit={(e) => handleSubmit(e)}>
+				<h1 className="list-title"> Your todo list <i className="fa-solid fa-arrows-turn-to-dots" style={{ color: "#e1e8f5" }}></i> </h1>
+				<input className="text-input" type="text" value={newTask} onChange={(e) => handleChange(e)} placeholder="What do you want to do?..." />
+				<input className="button btn btn-secondary rounded-1 p-1" type="submit" value={"Add task"} />
+			</form>
+
+			{todoList.length > 0 ? (
+				<div class="container-fluid">
+					<div className="todo-items justify-content-around align-items-center bg-light shadow-sm bg-body-tertiary rounded m-auto” style={{ width: “30rem” }}">
+
+						{todoList.map((task, index) => (
+							<div className="icon-container" key={index}>
+								<div>
+									<i className="fa-regular fa-square-check" style={{ color: "#23C474", marginLeft: "5rem" }}></i>
+									{task.label}
+									<span onClick={(e) => handleDelete(index)}>
+										<i className="fa-solid fa-delete-left" style={{ color: "#FF0000", marginRight: "5rem" }}></i>
+									</span>
+
+								</div>
+							</div>
+						))}
+
+					</div>
+				</div>
+			) : (
+				<p > try adding some tasks you wish to do!</p>
+			)}
 		</div>
-	  );
-	};
-	
-	export default Home;
+	);
+};
+
+export default Home;

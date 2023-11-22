@@ -1,24 +1,19 @@
-.todo-items {
+body {
+    background-color: darkcyan;
+}
+
+p {
+   color: azure;
+}
+.todo-list {
     width: 30rem;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
     gap: 0.5rem; 
-    
 }
 
-.todos-trash {
-    margin-left: auto;
-
-}
-
-.counter {
-    width: 30rem;
-    display: flex;
-    margin-inline:auto; 
-    margin-top: 1rem;
-    font-size: smaller;
-    color: rgb(182, 169, 169);
-    
+.text-input {
+    width: 22rem; 
 }
 
